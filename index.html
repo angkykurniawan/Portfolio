@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angky Kurniawan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1b16;
+      color: #a4f9c8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      padding: 40px 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #00ff99;
+      text-align: center;
+      margin-bottom: 5px;
+      animation: typing 2s steps(30, end), blink 0.6s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ff99;
+      max-width: 100%;
+    }
+
+    .subtext {
+      text-align: center;
+      font-style: italic;
+      color: #66ffcc;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    h2 {
+      color: #00ff99;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      border-bottom: 1px solid #00ff99;
+      padding-bottom: 5px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      animation: fadeInLeft 0.5s ease forwards;
+    }
+
+    .code-box {
+      background-color: #111c17;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.25);
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .link-item {
+      flex: 1 1 45%;
+      background-color: #11241d;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.15);
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease;
+    }
+
+    .link-item:hover {
+      transform: scale(1.05);
+      background-color: #0f2d22;
+    }
+
+    .link-item a {
+      text-decoration: none;
+      color: #00ff99;
+      font-weight: bold;
+    }
+
+    .full-width-link {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .full-width-link a {
+      color: #00ff99;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px;
+      display: inline-block;
+      background-color: transparent;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .full-width-link a:hover {
+      background-color: #0f2d22;
+      transform: scale(1.05);
+    }
+
+    .project-section h3 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #66ffcc;
+    }
+
+    .gallery {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .gallery a img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.05);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #55ffbb;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #003322;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .flex-responsive {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .flex-item {
+      flex: 1 1 100%;
+    }
+
+    @media (min-width: 768px) {
+      .flex-item {
+        flex: 1 1 48%;
+      }
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .modal-content, #caption {
+      animation: zoom 0.3s;
+    }
+
+    @keyframes zoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hi, I'm Angky Kurniawan 👨‍💻</h1>
+    <p class="subtext">Programming & Network Enthusiast</p>
+
+    <div class="flex-responsive">
+      <div class="flex-item">
+        <h2>💡 Checking Connection...</h2>
+        <div class="code-box" id="codeBox"></div>
+      </div>
+
+      <div class="flex-item">
+        <h2>🔗 Links</h2>
+        <div class="links-grid">
+          <div class="link-item"><a href="mailto:angkykurniawan03@gmail.com">📧 Email Me</a></div>
+          <div class="link-item"><a href="https://github.com/angkykurniawan">💻 GitHub</a></div>
+          <div class="link-item"><a href="https://www.linkedin.com/in/angky-kurniawan">🔗 LinkedIn</a></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>🖼️ Project</h2>
+    <div class="project-section">
+      <h3>ZIPLY: Letter & Packet Information System Using PHP Native</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Ziply/1.png" alt="Ziply Picture 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/2.png" alt="Ziply Picture 2" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/3.png" alt="Ziply Picture 3" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/4.png" alt="Ziply Picture 4" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/5.png" alt="Ziply Picture 5" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/6.png" alt="Ziply Picture 6" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/7.png" alt="Ziply Picture 7" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/8.png" alt="Ziply Picture 8" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/9.png" alt="Ziply Picture 9" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/10.png" alt="Ziply Picture 10" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/11.png" alt="Ziply Picture 11" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ziply/12.png" alt="Ziply Picture 12" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>ParcelPoint: Letter & Packet Information System Using Laravel 11</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/ParcelPoint/1.png" alt="ParcelPoint Picture 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/2.png" alt="ParcelPoint Picture 2" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/3.png" alt="ParcelPoint Picture 3" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/4.png" alt="ParcelPoint Picture 4" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/5.png" alt="ParcelPoint Picture 5" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/6.png" alt="ParcelPoint Picture 6" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/7.png" alt="ParcelPoint Picture 7" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/8.png" alt="ParcelPoint Picture 8" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/9.png" alt="ParcelPoint Picture 9" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/10.png" alt="ParcelPoint Picture 10" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/11.png" alt="ParcelPoint Picture 11" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/12.png" alt="ParcelPoint Picture 12" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/13.png" alt="ParcelPoint Picture 13" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/14.png" alt="ParcelPoint Picture 14" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/15.png" alt="ParcelPoint Picture 15" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/16.png" alt="ParcelPoint Picture 16" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/17.png" alt="ParcelPoint Picture 17" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/18.png" alt="ParcelPoint Picture 18" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/19.png" alt="ParcelPoint Picture 19" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/ParcelPoint/20.png" alt="ParcelPoint Picture 20" onclick="openModal(this)"></a>
+      </div>
+    </div>
+
+    <h2>🎟️ Events & Participations</h2>
+    <div class="links-grid">
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/C0g7bibPeGw/?utm_source=ig_web_copy_link" target="_blank">Capacity Building 2023</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/C3CidN0SQlC/?utm_source=ig_web_copy_link" target="_blank">Metta Permadhis 2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/C4W6bOFv0oO/?utm_source=ig_web_copy_link" target="_blank">Permadhis Goes to School 2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/C8CSlliSfAI/?utm_source=ig_web_copy_link" target="_blank">Permadhis Cup 2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/C8rsllSyUkf/?utm_source=ig_web_copy_link" target="_blank">Design & Multimedia Division Permadhis 2023-2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/C9C0JV6vjKE/?utm_source=ig_web_copy_link" target="_blank">Rapat Anggota XX Permadhis 2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/DC3ms6PymiN/?utm_source=ig_web_copy_link" target="_blank">Kathina Permadhis PCR 2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/DGaHHpgSgXi/?utm_source=ig_web_copy_link" target="_blank">Metta Permadhis 2025</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/reel/DATFDFjP4ol/?utm_source=ig_web_copy_link" target="_blank">Zhong Qiu Bersama 2024 (1)</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/reel/C_78kRovspX/?utm_source=ig_web_copy_link" target="_blank">Zhong Qiu Bersama 2024 (2)</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/reel/C_FngbgRYVP/?utm_source=ig_web_copy_link" target="_blank">Glow On 2024</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/DFu23PdhqBT/" target="_blank">Best Project Data Visualization JTI EXPO 3 2025</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/CM4HJ_tgOAG/?utm_source=ig_web_copy_link" target="_blank">Design & Sublim</a>
+      </div>
+      <div class="link-item">
+        <a href="https://www.instagram.com/p/BvWq01Xg-Kv/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">English Speaking in SLC 2019</a>
+      </div>
+    </div>
+
+    <h2>🛹 Design Portfolio</h2>
+    <div class="project-section">
+      <h3>Logo</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Logo/Robotika.png" alt="Robotika" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Logo/23TID.png" alt="23TID" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Stamp & Key Chain</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Stamp/JT.png" alt="CV Jaya Tualang" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Stamp/MJ.png" alt="Toko Mekar Jaya" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Stamp/Kelas54.png" alt="Kelas 5.4" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Packaging</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Packaging/Kemojo.png" alt="Packaging Bolu Kemojo" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Packaging/Mouse.png" alt="Packaging Mouse Mini" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Floor Plan</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/FloorPlan/CB.png" alt="Denah CB" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/FloorPlan/Acara.png" alt="Denah Acara" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>DTF Design</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/DTF/1.png" alt="DTF 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/DTF/2.png" alt="DTF 2" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/DTF/3.png" alt="DTF 3" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Banners</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Banners/2.png" alt="Banner 2" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Banners/1.png" alt="Banner 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Banners/3.png" alt="Banner 3" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Banners/4.png" alt="Banner 4" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Invitation</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Invitation/1.png" alt="Invitation 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Invitation/2.png" alt="Invitation 2" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Certificate</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Certificate/1.png" alt="Certificate 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Certificate/2.png" alt="Certificate 2" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Certificate/3.png" alt="Certificate 3" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Feed Instagram</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Feed/1.png" alt="Feed 1" onclick="openModal(this)"></a>
+      </div><br>
+
+      <h3>Tickets</h3>
+      <div class="gallery">
+        <a href="#"><img src="./Images/Ticket/1.png" alt="Ticket 1" onclick="openModal(this)"></a>
+        <a href="#"><img src="./Images/Ticket/2.png" alt="Ticket 2" onclick="openModal(this)"></a>
+      </div><br>
+
+    </div>
+
+
+    <footer>&copy; 2025 Angky Kurniawan. All rights reserved.</footer>
+  </div>
+
+  <!-- Modal for image preview -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    const code = `
+import socket
+
+def check_connection():
+    try:
+        s = socket.create_connection(("8.8.8.8", 53))
+        print("Internet: Connected")
+    except OSError:
+        print("Internet: Disconnected")
+
+check_connection()
+    `;
+    const codeBox = document.getElementById("codeBox");
+    let i = 0;
+    function typeCode() {
+      if (i < code.length) {
+        codeBox.innerHTML += code.charAt(i) === "\n" ? "<br>" : code.charAt(i);
+        i++;
+        setTimeout(typeCode, 30);
+      }
+    }
+    setTimeout(typeCode, 1000);
+
+    // Modal functionality
+    function openModal(img) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
