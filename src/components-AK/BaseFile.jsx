@@ -8,7 +8,7 @@ export default function Portfolio() {
 import request, time
 def check():
     try:
-        r=requests.get("https://www.google.com",timeout=3)
+        r=requests.get("https://www.google.com")
         if r.status_code==200:
             print("Connected")
         else:
