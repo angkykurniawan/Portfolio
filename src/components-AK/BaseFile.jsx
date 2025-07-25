@@ -200,7 +200,7 @@ def start():
         )}
 
         <footer className="text-center text-sm text-[#55ffbb] mt-12 pt-6 border-t border-[#003322] animate-fadeIn">
-          &copy; 2025 Angky Kurniawan. All rights reserved.
+          &copy; 2025 Angky Kurniawan. All Rights reserved.
         </footer>
       </div>
     </div>
