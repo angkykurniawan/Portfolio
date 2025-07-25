@@ -116,7 +116,7 @@ def start():
               🔗 Links
             </h2>
             <div className="flex flex-col gap-5">
-              {["angkykurniawan03@gmail.com", "https://github.com/angkykurniawan", "https://www.instagram.com/angkyk05?igsh=MzM1a3gxczhvdjRi", "http://www.youtube.com/@Angkyk05", "https://linktr.ee/angkykurniawan"].map((url, idx) => (
+              {["mailto:angkykurniawan03@gmail.com", "https://github.com/angkykurniawan", "https://www.instagram.com/angkyk05?igsh=MzM1a3gxczhvdjRi", "http://www.youtube.com/@Angkyk05", "https://linktr.ee/angkykurniawan"].map((url, idx) => (
                 <a
                   key={idx}
                   href={url.includes("mailto") ? url : url.startsWith("http") ? url : `mailto:${url}`}
