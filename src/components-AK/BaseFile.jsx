@@ -38,15 +38,20 @@ def start():
   ];
 
   const designSections = [
-    { title: "Logo", folder: "/Logo", files: ["Robotika.png", "23TID.png"] },
+    { title: "Logo", folder: "/Logo", files: ["Robotika.png", "23TID.png", "PalmFusion.png"] },
+     { title: "ConceptArt", folder: "/ConceptArt", files: ["BagianDalamAmazonGo.jpg", "DepanTokoAmazonGo.jpg", "DepanTokoPenyewaanVR.jpg", "PintuMasukAmazonGo.jpg", "RuangTamuRumahSerwin.jpg"] },
     { title: "Stamp & Key Chain", folder: "/Stamp", files: ["JT.png", "MJ.png", "Kelas54.png"] },
     { title: "Packaging", folder: "/Packaging", files: ["Kemojo.png", "Mouse.png"] },
+    { title: "Shirt", folder: "/Shirt", files: ["Black.jpg", "Jade.jpg", "Sage.jpg"] },
+    { title: "MCCard", folder: "/MCCard", files: ["DarkTheme.png", "LightTheme.png"] },
     { title: "Floor Plan", folder: "/FloorPlan", files: ["CB.png", "Acara.png"] },
     { title: "DTF Design", folder: "/DTF", files: ["1.png", "2.png", "3.png"] },
     { title: "Banners", folder: "/Banners", files: ["2.png", "1.png", "3.png", "4.png"] },
+    { title: "Flyer", folder: "/Flyer", files: ["1.jpg", "2.png"] },
+     { title: "XBanner", folder: "/XBanner", files: ["XBanner.jpg", "XBanner.jpg"] },
     { title: "Invitation", folder: "/Invitation", files: ["1.png", "2.png"] },
-    { title: "Certificate", folder: "/Certificate", files: ["1.png", "2.png", "3.png"] },
-    { title: "Feed Instagram", folder: "/Feed", files: ["1.png"] },
+    { title: "Certificate", folder: "/Certificate", files: ["1.png", "2.png", "3.png", "4.jpg"] },
+    { title: "Feed Instagram", folder: "/Feed", files: ["1.png", "2.jpg"] },
     { title: "Tickets", folder: "/Ticket", files: ["1.png", "2.png"] }
   ];
 
