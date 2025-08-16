@@ -43,7 +43,7 @@ def start():
     { title: "Stamp & Key Chain", folder: "/Stamp", files: ["JT.png", "MJ.png", "Kelas54.png"] },
     { title: "Packaging", folder: "/Packaging", files: ["Kemojo.png", "Mouse.png"] },
     { title: "Shirt", folder: "/Shirt", files: ["Black.jpg", "Jade.jpg", "Sage.jpg"] },
-    { title: "MCCard", folder: "/MCCard", files: ["DarkTheme.png", "LightTheme.png"] },
+    { title: "MC Card", folder: "/MCCard", files: ["DarkTheme.png", "LightTheme.png"] },
     { title: "Floor Plan", folder: "/FloorPlan", files: ["CB.png", "Acara.png"] },
     { title: "DTF Design", folder: "/DTF", files: ["1.png", "2.png", "3.png"] },
     { title: "Banners", folder: "/Banners", files: ["2.png", "1.png", "3.png", "4.png"] },
@@ -70,8 +70,9 @@ def start():
     { label: "Best Project Data Visualization JTI EXPO 3 2025", url: "https://www.instagram.com/p/DFu23PdhqBT/" },
     { label: "Design & Sublim", url: "https://www.instagram.com/p/CM4HJ_tgOAG/" },
     { label: "English Speaking in SLC 2019", url: "https://www.instagram.com/p/BvWq01Xg-Kv/" },
-    { label: "3D Animation With Blender Tools", url: "https://drive.google.com/file/d/1MdwNF_UmjqDroGkTJvbO83dVAr5zOxVB/view?usp=classroom_web&authuser=0" },
-    { label: "2D Game Development Using RPG Maker MV", url: "https://www.youtube.com/watch?v=McP-Fyn-O6I" }
+    { label: "3D Animation With Blender Tools", url: "https://youtu.be/AqYGObc555E" },
+    { label: "2D Game Development Using RPG Maker MV", url: "https://www.youtube.com/watch?v=McP-Fyn-O6I" },
+    { label: "Corodinator Design Media Division Permadhis 2024-2025", url: "https://www.instagram.com/p/DNS8VnnvbCz/?img_index=1&igsh=Ymc1bDNsdmJycWE4" }
   ];
 
   return (
@@ -95,7 +96,7 @@ def start():
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fadeIn">
-          {["Blockchain.png", "Winbox.png", "Cisco.svg", "Linux.png", "Programming.png"].map((src, i) => (
+          {["Blockchain.png", "AWS.png", "Winbox.png", "Cisco.svg", "Linux.png", "Programming.png"].map((src, i) => (
             <img
               key={i}
               src={`/Images/Interests/${src}`}
